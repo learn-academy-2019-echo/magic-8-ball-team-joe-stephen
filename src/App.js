@@ -10,20 +10,31 @@ class App extends React.Component {
   }
 
   getAnswer = () => {
-    //This is where you will write your Magic 8 Ball code
-    return "The Magic 8 ball answer"
+    //Thisis where you will write your Magic 8 Ball code
+    const randomAnswersLog = [
+            "Indefintely you can!", 
+            "No! How could you ask such a thing.", 
+            "maybe, let me thing about it...", 
+            "of course good sir!", 
+            "ask again later",
+            "?"
+          ]
+          const answers = Math.floor(Math.random() * randomAnswersLog.length)
+          return randomAnswersLog[answers]
+          
+    // return "The Magic 8 ball answer"
   }
 
   handleSubmit = () =>{
     const answer = this.getAnswer()
     this.setState({answer: answer})
   }
-
+  
   render(){
     return (
       <div>
-        <h1>Magic 8 Ball</h1>
-        <input
+        <h1> Magic 8 Ball Game!</h1>
+        <input id="bottom"
           type='text'
         />
         <br />
@@ -36,6 +47,7 @@ class App extends React.Component {
         {this.state.answer &&
           <h2> The Magic 8 Ball says: {this.state.answer} </h2>
         }
+             
       </div>
     )
   }
