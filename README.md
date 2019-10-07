@@ -62,10 +62,13 @@ class App extends React.Component {
     const answer = this.getAnswer()
     this.setState({answer: answer})
   }
-
   render(){
     return (
       <div>
+      <br>
+<br><br>
+<br><br>
+<br>
         <h1>Magic 8 Ball</h1>
         <input
           type='text'
